@@ -36,10 +36,11 @@ get '/instructor' do
 end
 
 get '/links' do
-"There are three links. <ul><li>
-use <b>/slack<b></li><li>
-use <b>/site<b></li><li>
-use <b>/repo<b></li></ul>"
+"<h1>There are three links.</h1>
+<ul>
+<li>use <b>/slack<b> to get the course slack address.</li>
+<li>use <b>/site<b> to get the course web address.</li>
+<li>use <b>/repo<b> to get the course GitHub repo address.</li></ul>"
 end
 
 
