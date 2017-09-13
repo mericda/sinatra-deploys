@@ -52,5 +52,7 @@ get '/links/:item' do
     "https://canvas.cmu.edu/courses/2138"
   elsif params[:item] == "repo"
     "https://github.com/daraghbyrne/onlineprototypes2017"
+  else
+    redirect to('/links')
   end
 end
