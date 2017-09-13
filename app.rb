@@ -35,6 +35,14 @@ get '/instructor' do
 "Daragh Byrne"
 end
 
+get '/links' do
+"There are three links. <ul><li>
+use <b>/slack<b></li><li>
+use <b>/site<b></li><li>
+use <b>/repo<b></li></ul>"
+end
+
+
 get '/links/:item' do
 
   if params[:item] == "slack"
