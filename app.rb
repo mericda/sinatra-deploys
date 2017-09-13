@@ -38,9 +38,9 @@ end
 get '/links' do
 "<h1>There are three links.</h1>
 <ul>
-<li>use <b>/slack<b> to get the course slack address.</li>
-<li>use <b>/site<b> to get the course web address.</li>
-<li>use <b>/repo<b> to get the course GitHub repo address.</li></ul>"
+<li>use <b>/slack</b> to get the course slack address.</li>
+<li>use <b>/site</b> to get the course web address.</li>
+<li>use <b>/repo</b> to get the course GitHub repo address.</li></ul>"
 end
 
 
