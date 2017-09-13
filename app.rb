@@ -1,5 +1,10 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
+configure do
+  set :slack, 'https://onlineprototypes2017.slack.com'
+  set :site, 'https://canvas.cmu.edu/courses/2138'
+  set :repo, 'https://github.com/daraghbyrne/onlineprototypes2017'
+end
 
 enable :sessions
 
@@ -45,6 +50,18 @@ end
 
 
 get '/links/:item' do
+  if params["item"] == 'slack'
+settings.slack
+  elsif params["item"] == 'site'
+settings.site
+  elsif params["item"] == 'repo'
+settings.repo
+  else
+    redirect to ('/links')
+  end
+end
+
+get '/links/:item' do
 
   if params[:item] == "slack"
     "https://onlineprototypes2017.slack.com"
@@ -56,3 +73,20 @@ get '/links/:item' do
     redirect to('/links')
   end
 end
+
+
+get '/meeting_times' do
+  "<h1>You can meet with Daragh either in class or during his office hours.</h1>
+  <ul>
+  <li>use <b>/class</b> to get the course schedule.</li>
+  <li>use <b>/officehours</b> to get Daragh's office hours.</li></ul>"
+end
+
+get '/meeting_times/:item' do
+  if params["item"] == 'class'
+    "Course meets at 3-5pm on Tuesdays and Thursdays. "
+  elsif params["item"] == 'officehours'
+    "Daragh is available for any questions between 5:00 to 6:30 on Fridays"
+  else
+    redirect to ('/meeting_times')
+  end
