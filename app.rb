@@ -61,19 +61,6 @@ settings.repo
   end
 end
 
-get '/links/:item' do
-
-  if params[:item] == "slack"
-    "https://onlineprototypes2017.slack.com"
-  elsif params[:item] == "site"
-    "https://canvas.cmu.edu/courses/2138"
-  elsif params[:item] == "repo"
-    "https://github.com/daraghbyrne/onlineprototypes2017"
-  else
-    redirect to('/links')
-  end
-end
-
 
 get '/meeting_times' do
   "<h1>You can meet with Daragh either in class or during his office hours.</h1>
